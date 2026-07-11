@@ -28,10 +28,10 @@ Entry format:
 - Rationale: `{sequence_hex}-{epoch_ms_hex}-{pid_hex}.pmp`; sequence is the authoritative spool-local id and must match the envelope's `sequence` field. Publication: write to `tmp/`, fsync file, atomic rename into `pending/`, fsync directory. Crash recovery in v0.0 is manual only (no automatic lease/timeout) to keep the spec deterministic.
 - Status: DECIDED
 
-## [OPEN] License
-- Date: 2026-07-10
-- Rationale: Apache 2.0 was recommended in the design chat (explicit patent grant, fits a public protocol) but not yet explicitly confirmed. No LICENSE file has been added.
-- Status: OPEN
+## [DECIDED] License
+- Date: 2026-07-11
+- Rationale: Apache 2.0 confirmed — the GitHub repo was initialized with an Apache 2.0 `LICENSE` file, matching the earlier recommendation (explicit patent grant, fits a public protocol). Merged into local history from `origin/main`.
+- Status: DECIDED
 
 ## [OPEN] Python implementation repo name
 - Date: 2026-07-10
