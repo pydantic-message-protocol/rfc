@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 ## What this is
-RFC / decision-record repo. Docs-only — no executable code. The documents are the artifact.
+RFC repository for **PMP (Protocol for Message Passing)**, org `pydantic-message-protocol`. Docs-only — no executable code. First spec: `rfcs/0000-pmp-spool.md` (PMP RFC 0, the Spool filesystem transport profile). Pydantic is the Python reference implementation's object model, not part of the protocol itself. A separate Python implementation repo (`pmp-python` or `python-pmp`, name TBD) will consume this spec.
 
 ## Constraints
 - Docs-only. No code, package managers, or build tooling unless a decision in `DECISIONS.md` explicitly approves it.
