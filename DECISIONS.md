@@ -38,6 +38,11 @@ Entry format:
 - Rationale: `pmp-python`, under the `pydantic-message-protocol` org — groups consistently with hypothetical future per-language repos (`pmp-go`, `pmp-rust`).
 - Status: DECIDED
 
+## [DECIDED] CI scope for pmp-python
+- Date: 2026-07-11
+- Rationale: `pip install git+https://github.com/pydantic-message-protocol/pmp-python.git` already works with a plain PEP 517 `pyproject.toml` (hatchling) — no GitHub Action is required for that install path. A CI-only GitHub Action (build + run tests on every push/PR) still catches packaging regressions before they reach that install path. No PyPI publishing workflow for now — no code, tests, or release process exist yet; publishing automation is deferred until there's something to release.
+- Status: DECIDED
+
 ## [DECIDED] Python package dependencies
 - Date: 2026-07-11
 - Rationale: `pydantic` is the only runtime dependency — the RFC frames Pydantic as the reference implementation's object model, so the envelope/payload types are Pydantic models. Everything else (atomic rename, fsync, advisory locking via `fcntl`, timestamps, filenames) is Python stdlib. No `jsonschema` dependency — the checked-in JSON Schema is for cross-language conformance tooling, not runtime use. Packaging uses a standard PEP 517 backend (hatchling) so `pip install git+https://github.com/pydantic-message-protocol/pmp-python.git` works without requiring `uv`; `uv` remains the local dev-environment tool only.
