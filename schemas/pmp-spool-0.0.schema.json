@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/pydantic-message-protocol/rfc/schemas/pmp-spool-0.0.schema.json",
+  "title": "PMP Envelope (Spool 0.0)",
+  "type": "object",
+  "required": ["pmp", "profile", "message_type", "schema_version", "created_at", "producer", "sequence", "payload"],
+  "additionalProperties": false,
+  "properties": {
+    "pmp": { "const": "0.0" },
+    "profile": { "const": "spool" },
+    "message_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_-]*)+$"
+    },
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "producer": { "type": "string", "minLength": 1 },
+    "sequence": {
+      "type": "string",
+      "pattern": "^[0-9a-f]+$",
+      "description": "Lowercase hex, no 0x prefix. MUST match the sequence component of the message filename."
+    },
+    "payload": { "type": "object" }
+  }
+}
