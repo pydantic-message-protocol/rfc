@@ -33,7 +33,12 @@ Entry format:
 - Rationale: Apache 2.0 confirmed — the GitHub repo was initialized with an Apache 2.0 `LICENSE` file, matching the earlier recommendation (explicit patent grant, fits a public protocol). Merged into local history from `origin/main`.
 - Status: DECIDED
 
-## [OPEN] Python implementation repo name
-- Date: 2026-07-10
-- Rationale: Candidates are `pmp-python` vs `python-pmp` under the `pydantic-message-protocol` org. Not yet picked.
-- Status: OPEN
+## [DECIDED] Python implementation repo name
+- Date: 2026-07-11
+- Rationale: `pmp-python`, under the `pydantic-message-protocol` org — groups consistently with hypothetical future per-language repos (`pmp-go`, `pmp-rust`).
+- Status: DECIDED
+
+## [DECIDED] Python package dependencies
+- Date: 2026-07-11
+- Rationale: `pydantic` is the only runtime dependency — the RFC frames Pydantic as the reference implementation's object model, so the envelope/payload types are Pydantic models. Everything else (atomic rename, fsync, advisory locking via `fcntl`, timestamps, filenames) is Python stdlib. No `jsonschema` dependency — the checked-in JSON Schema is for cross-language conformance tooling, not runtime use. Packaging uses a standard PEP 517 backend (hatchling) so `pip install git+https://github.com/pydantic-message-protocol/pmp-python.git` works without requiring `uv`; `uv` remains the local dev-environment tool only.
+- Status: DECIDED
