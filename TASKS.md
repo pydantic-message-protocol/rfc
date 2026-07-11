@@ -3,8 +3,7 @@
 ## Active
 
 ## Up Next
-- Confirm license (Apache 2.0 recommended — see DECISIONS.md OPEN) and add LICENSE file
-- Pick Python implementation repo name (`pmp-python` vs `python-pmp` — see DECISIONS.md OPEN), create it under github.com/pydantic-message-protocol
+- Create github.com/pydantic-message-protocol/pmp-python (empty repo, then scaffold pyproject.toml with hatchling backend, `pydantic` as sole runtime dependency)
 - Implement Python reference package (`pmp`): `envelope.py`, `producer.py`, `consumer.py`, `spool.py`, `naming.py`, `exceptions.py` per rfcs/0000-pmp-spool.md
 
 ## Backlog
