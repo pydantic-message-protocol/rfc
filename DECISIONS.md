@@ -50,5 +50,5 @@ Entry format:
 
 ## [DECIDED] Org avatar art
 - Date: 2026-07-12
-- Rationale: Finalized spool-concept icon (concentric rings + core, slate/amber/blue) stored at `assets/org-icon.png`. The originally generated PNG had a checkerboard background baked into opaque pixels (no real alpha channel) rather than true transparency — converted locally to a genuine RGBA alpha channel before committing. GitHub has no REST API endpoint for uploading org/user avatars, so the actual upload must be done manually via the web UI (tracked as a TASKS.md item).
+- Rationale: Finalized spool-concept icon (concentric rings + core, slate/amber/blue) stored at `assets/org-icon.png`. The originally generated PNG had a checkerboard background baked into opaque pixels (no real alpha channel) rather than true transparency — converted locally to a genuine RGBA alpha channel before committing. First upload attempt was rejected by GitHub (1.07MB, over the 1MB avatar limit); resized to 512x512 (~127KB) which uploaded successfully. GitHub has no REST API endpoint for uploading org/user avatars — done manually via the web UI. Org avatar is now live.
 - Status: DECIDED
