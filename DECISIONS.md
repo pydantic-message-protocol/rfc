@@ -47,3 +47,8 @@ Entry format:
 - Date: 2026-07-11
 - Rationale: `pydantic` is the only runtime dependency — the RFC frames Pydantic as the reference implementation's object model, so the envelope/payload types are Pydantic models. Everything else (atomic rename, fsync, advisory locking via `fcntl`, timestamps, filenames) is Python stdlib. No `jsonschema` dependency — the checked-in JSON Schema is for cross-language conformance tooling, not runtime use. Packaging uses a standard PEP 517 backend (hatchling) so `pip install git+https://github.com/pydantic-message-protocol/pmp-python.git` works without requiring `uv`; `uv` remains the local dev-environment tool only.
 - Status: DECIDED
+
+## [DECIDED] Org avatar art
+- Date: 2026-07-12
+- Rationale: Finalized spool-concept icon (concentric rings + core, slate/amber/blue) stored at `assets/org-icon.png`. The originally generated PNG had a checkerboard background baked into opaque pixels (no real alpha channel) rather than true transparency — converted locally to a genuine RGBA alpha channel before committing. GitHub has no REST API endpoint for uploading org/user avatars, so the actual upload must be done manually via the web UI (tracked as a TASKS.md item).
+- Status: DECIDED
