@@ -7,7 +7,7 @@
 - Add `.github/workflows/ci.yml` to pmp-python: build + run tests on push/PR. No publish step for now.
 
 ## Backlog
-- README.md, CONTRIBUTING.md, CHANGELOG.md for this repo
+- CONTRIBUTING.md, CHANGELOG.md for this repo
 - rfcs/template.md for future RFC authoring
 - conformance/ test fixtures (valid/ and invalid/ example messages)
 - Future transport profiles: PMP/HTTP, PMP/UnixSocket, PMP/TCP
